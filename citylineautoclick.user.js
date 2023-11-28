@@ -50,30 +50,43 @@
         }
     }, 1000); // 1 second
     if (window.location.href.includes("/performance?")) {
-      let _0x170355 = document.createElement("button");
-      _0x170355.innerHTML = "\u81EA\u52D5\u63C0\u4F4D";
-      _0x170355.className = "btn btn-outline-primary";
-      _0x170355.id = "test";
-      document.getElementsByClassName("discount")[0x0].append(_0x170355);
-      async function _0x213877() {
-        console.log("\u958B\u59CB\u81EA\u52D5\u63C0\u4F4D");
-        let _0x73f50 = document.getElementById("ticketType0").value;
-        if (_0x73f50 === "0") {
-          alert("\u4F60\u672A\u63C0\u8CB7\u5E7E\u591A\u5F35!!!");
-        } else {
-          while (true) {
-            document.getElementsByClassName("purchase-btn")[0x0].click();
-            await _0x542fc9(0x1f4);
-          }
+        let button = document.createElement("button");
+        button.innerHTML = "自動提位";
+        button.className = "btn btn-outline-primary";
+        button.id = "test";
+        document.getElementsByClassName("discount")[0].append(button);
+
+        async function autoPurchase() {
+            console.log("開始自動提位");
+            let ticketTypeElement = document.getElementById("ticketType0");
+
+            if (!ticketTypeElement) {
+                console.error("Ticket type element not found!");
+                return;
+            }
+
+            let ticketType = ticketTypeElement.value;
+            console.log(ticketType);
+
+            if (ticketType === "0") {
+                alert("你未提買幾多張!!!");
+            } else {
+                while (true) {
+                    document.getElementsByClassName("purchase-btn")[0].click();
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                }
+            }
         }
-      }
-      function _0x15eb4e() {
-        document.getElementById("test").addEventListener("click", function () {
-          _0x213877();
-        });
-      }
-      _0x15eb4e();
+
+        function addClickListener() {
+            document.getElementById("test").addEventListener("click", function () {
+                autoPurchase();
+            });
+        }
+
+        addClickListener();
     }
+
     // Create and append the banner element
     var bannerElement = document.createElement('div');
     bannerElement.style.cssText = 'position: fixed; bottom: 0; left: 0; width: 100%; background-color: #ff0000; color: black; padding: 10px; text-align: center; font-size: 16px;';
