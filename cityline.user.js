@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         cityline
 // @version      試用(26/11)試用 CRACKED!!!
-// @author       JohnStyleZ
+// @author       TechTickBot
 // @namespace    https://t.me/techtickbot_channel
 // @match        https://*.cityline.com/*
 // @exclude      https://www.cityline.com/*/Login.html*
