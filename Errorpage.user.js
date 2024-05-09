@@ -3,7 +3,7 @@
 // @version      1.0
 // @author       JohnStyleZ
 // @namespace    https://your.namespace.com
-// @match        https://*.hkticketing.com/*
+// @match        *.hkticketing.com/*
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
