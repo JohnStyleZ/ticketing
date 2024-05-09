@@ -15,9 +15,9 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4) {
-                if (this.status == 504) {
-                    // Redirect to a specific URL
-                    window.location.href = "https://queue.hkticketing.com/hotshow.html";
+                if (this.status !== 200) {
+                    // Redirect using window.location.replace() method
+                    window.location.replace("https://queue.hkticketing.com/hotshow.html");
                 }
             }
         };
@@ -28,5 +28,4 @@
 
     // Check for server status periodically
     setInterval(checkServerStatus, 5000); // Check every 5 seconds
-
 })();
